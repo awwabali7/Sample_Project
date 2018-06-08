@@ -1,0 +1,131 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.field_with_errors{
+  padding: 0px !important;
+  display:inline !important;
+  background-color: white !important;
+}
+#answer{
+  margin-bottom: 20px;
+}
+.question-description{
+  margin-bottom:20px;
+}
+
+#answer-count-margin{
+  margin-bottom: 20px;
+}
+
+
+#button-margin{
+  margin-top:20px;
+}
+
+.question-buttons{
+  display: ruby;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+}
+
+/*
+table {
+    border-collapse: collapse;
+    width: 70%
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th{
+height: 50px;
+text-align: center;
+}
+
+td{
+  text-align: center;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+}
+*/
+
+body {
+
+padding-top: 60px;
+
+}
+section {
+overflow: auto;
+}
+textarea {
+resize: vertical;
+}
+.center {
+text-align: center;
+}
+.center h1 {
+margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+line-height: 1;
+}
+h1 {
+font-size: 3em;
+letter-spacing: -2px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 16px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+footer {
+margin-top: 45px;
+padding-top: 5px;
+border-top: 1px solid #eaeaea;
+color: #777;
+}
+footer a {
+color: #555;
+}
+footer a:hover {
+color: #222;
+}
+footer small {
+float: left;
+}
+footer ul {
+float: right;
+list-style: none;
+}
+footer ul li {
+float: left;
+}

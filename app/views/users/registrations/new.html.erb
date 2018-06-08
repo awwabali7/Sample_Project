@@ -1,0 +1,44 @@
+<% provide(:title,"Sign Up")%>
+<h1>Sign up</h1>
+<div class="row" style="margin-left: 8px;">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true%>
+    </div>
+
+    <div class="field">
+      <%= f.label :email ,class: 'required'%><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password ,class: 'required'%>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation ,class: 'required'%><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit("Sign up", class: "btn btn-primary") %>
+    </div>
+  <% end %>
+  <%= render "users/shared/links" %>
+</div>
+
+<script type="text/javascript">
+      var email = document.getElementById("user_email");
+      email.oninvalid = function(e){
+        e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("please enter a valid email address");
+            }
+      }              
+</script>

@@ -1,0 +1,40 @@
+<div class="row">
+  <%= render partial:"search_to_form"%>
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+</div>
+<div class="row" style="margin-bottom: 15px">
+  <div class="col-md-2"> 
+    <h2>Questions</h2>
+  </div>
+  <div class="col-md-8">
+  </div>
+  <div class="col-md-2">
+    <% if user_signed_in? %>
+      <div id="button-margin">
+        <%= button_to 'Ask Question', new_question_path(@question), method: :get, :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="1">Title</th>
+      <th colspan="3">Actions</th>
+      <th> Category </th>
+      <th> Total Answers </th> 
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @questions.each do |question| %>
+      <%= render partial: 'question_list', locals: { question: question } %>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+
+
+ <script type="text/javascript">
+ </script>

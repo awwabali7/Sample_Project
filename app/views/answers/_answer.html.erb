@@ -1,0 +1,28 @@
+<div id="answer">
+	<div class="row">
+	  <div id="answer-content-<%=answer.id%>" style="margin-bottom: 15px;">
+	    <%= answer.content%>
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-md-2">
+		<div id="posted-by-details-<%=answer.id%>" style="margin-left: -14px;">
+		  <p>Posted By:<strong><%= answer.user.name%></strong></p>
+		</div>
+	  </div>
+	  <div class="col-md-9">
+	  </div>
+	  <div class="col-md-1" style="display: flex">
+		<% if can? :edit,answer %>
+		  <div id="edit-link-<%=answer.id%>" style="margin-right: 2px;">
+		      <%= link_to 'edit',edit_question_answer_path(@question,answer), class:"btn btn-info", remote:true %>
+		  </div>
+		<% end %>
+		<% if can? :destroy,answer %>
+		  <div id="delete-link-<%=answer.id%>">
+		    <%= link_to 'delete' , [ @question,answer ], method: :delete,data: { confirm: 'Are you sure?' }, class:"btn btn-danger", remote:true %>
+	      </div>
+		<% end %>
+	  </div>	
+	</div>
+</div>

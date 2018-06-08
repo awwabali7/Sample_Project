@@ -1,0 +1,31 @@
+<% provide(:title,@user.name)%>
+<div class="row">
+  <div class="col-md-2">
+    <h2>
+      <%= @user.name %>
+    </h2>
+  </div>
+</div>
+<div class="row">
+  <% if @questions.any? %>
+    <h1> <%= pluralize(@questions.count, "Question") %></h1>
+    <table class="table table-bordered" style="margin-left: 15px;">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @questions%>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+
+            
+
+
+

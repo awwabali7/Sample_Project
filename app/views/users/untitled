@@ -1,0 +1,30 @@
+
+user = User.where(name:"hassan").where(age:15)
+for u in user
+  u.name = "kashif"
+  u.save
+end
+
+User.where(name:"hassan").where(age:15).update_all(name:"kashif")
+
+
+
+update users set name="kashif"  where name="hassan" AND age=15 
+
+update 
+update_attribute(name:"kashif")
+update_attributes
+update_column(name:"kashif")
+update_columns(name:"kashif")
+
+
+before_validation
+after_validation
+before save
+around save
+before create
+around create
+after create
+after save
+
+

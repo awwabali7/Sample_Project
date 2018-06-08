@@ -1,0 +1,18 @@
+<div class="row" id="advanced-search-form" style="margin-left: 12px; margin-bottom: 20px" >
+<%= form_tag(questions_path, :method => "get", id: "advanced-search-display") do %>
+   <%= label_tag "Sort By"%> 
+    <%= select_tag(:sort_by, options_for_select([["",""],["creation","created_at "],["title","title "]]), class:"select") %> &nbsp
+ 	<%= label_tag "Category"%>
+    <%= select_tag(:category, options_for_select([["",""],["cs","cs"],["ee","ee"]]), class:"select") %> &nbsp
+  <%= label_tag "Sorting order"%>
+  <%= select_tag(:sorting_order, options_for_select([["",""],["Ascending","asc"],["Descending","desc"]]), class:"select") %> &nbsp 
+
+    <%= label_tag "Answers Count"%>
+	<%= number_field_tag :answer_count, nil, min: 0, step: 1 %> &nbsp
+	 <%= label_tag "Title"%>
+	<%= text_field_tag :search, params[:search], placeholder: "Search question by title" %> 
+	<div id="search-button" style="display: inline; margin-left: 37px;">
+     <%= submit_tag "Search", :name => nil, class:"btn btn-primary" %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,16 @@
+<tr>
+  <td><strong><%= question.title %></strong></td>
+  <td><%= link_to 'Show', question %></td>
+  <% if user_signed_in? && can?(:edit, question)%>
+    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+  <% else %>
+    <td><%= "Not Allowed"%></td>
+  <% end %>
+  <% if user_signed_in? && can?(:destroy, question) %>
+    <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+    <td><%= "Not Allowed"%></td>
+  <% end %>
+  <td><%= question.category %></td>
+  <td><%= question.total_answers%></td>
+</tr>

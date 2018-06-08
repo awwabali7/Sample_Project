@@ -1,0 +1,5 @@
+$("#ajax-answer-call").append("<%= escape_javascript render partial: 'answer', locals: { answer: @answer }%>");
+$("#answer_content").val('')
+alert("<%= flash.now[:success]%>");
+$("#get_answer_count").text('<%= pluralize(@answers.count, "Answer")%>')
+

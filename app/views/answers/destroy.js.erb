@@ -1,0 +1,6 @@
+$("#answer-content-<%= @answer.id%>").remove();
+$("#edit-link-<%= @answer.id%>").remove();
+$("#delete-link-<%= @answer.id%>").remove();
+$("#posted-by-details-<%=@answer.id%>").remove();
+alert("<%= flash.now[:success]%>");
+$("#get_answer_count").text('<%= pluralize(@question.answers.count, "Answer")%>')

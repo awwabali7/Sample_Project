@@ -1,0 +1,22 @@
+<% @answer ||= local_assigns[:answer] %>
+<%= form_for([@question,@answer], remote:current_user) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :content , 'Answer Description', class: 'required'%><br>
+    <div id="get-content">
+      <%= f.text_area :content, rows:"6",cols:"35",:required => 'required' %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit(class: "btn btn-primary") %>
+  </div>
+<% end %>

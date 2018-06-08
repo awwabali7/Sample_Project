@@ -1,0 +1,2 @@
+Hi <%= @user.name %>. Your Question has been deleted by admin
+Sample mail sent using smtp.
